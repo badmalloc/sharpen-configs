@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="Db4objects.Db4odoc" default="sharpen-docs">
 	<property file="sharpen.properties" />
-
+	
 	<macrodef name="reset-dir">
 		<attribute name="dir" />
 		<sequential>
@@ -30,9 +30,7 @@
 		        <arg value="-header" />
 		        <arg file="header.txt" />
 				<arg value="@{resource}" />
-
 				<args />
-
 			</exec>
 		</sequential>
 	</macrodef>
@@ -40,7 +38,7 @@
 
   <!-- Main target -->
   <target name="sharpen-docs" depends="clean">
-
+  
     <property name="target.dir" location="sharpen" />
 
     <!-- Copy java files to the resource folder -->
@@ -75,13 +73,11 @@
         <arg value="@sharpen-all-options" />
       </args>
     </sharpen>
-
   </target>
 
   <!-- Remove resources from the previous convertion run -->
   <target name="clean" description="Delete all generated files">
-    <delete failonerror="true" includeemptydirs="true" 
-description="Removing all generated files">
+    <delete failonerror="true" includeemptydirs="true" description="Removing all generated files">
       <fileset dir="sharpen">
         <include name="**/*" />
         <exclude name="**/lib/*" />
